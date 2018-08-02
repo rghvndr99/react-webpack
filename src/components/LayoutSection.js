@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import '../App.css';
 import {doglisting,dogRandomImg} from '../action/action.js';
 import {bindActionCreators} from 'redux';
 import {connect} from "react-redux";

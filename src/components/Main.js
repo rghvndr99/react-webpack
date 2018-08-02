@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import '../App.css';
 import HeaderComponent from './HeaderComponent';
 import GalleryLayout from './GalleryLayout';
 import {closePopUp,MakeNetworkReq,reset,doglisting} from '../action/action.js';

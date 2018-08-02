@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import '../App.css';
 import LayoutSection from './LayoutSection';
 import LoadCarousol from './loadCarosoul';
 import {doglisting} from '../action/action.js';

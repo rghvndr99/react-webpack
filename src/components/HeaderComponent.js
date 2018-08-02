@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import ListOfBread from './ListOfBread';
-import logo from '../logo.svg';
-//import '../App.css';
 import {reset,doglisting,dogRandomImg,listingOfBreed} from '../action/action.js';
 import {bindActionCreators} from 'redux';
 import {connect} from "react-redux";
