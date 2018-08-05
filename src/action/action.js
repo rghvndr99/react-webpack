@@ -10,9 +10,8 @@ BASE_URL,
 LIST,
 ALL_BREAD,
 SPECIFIC_BREAD,
-IMAGES,
-RANDOM
-} from '../constants/const.js';
+IMAGES
+} from "../constants/const.js";
 /*...............user action....................*/
 export const closePopUp=(actionvalue=false)=>{
         return dispatch=>{
@@ -23,21 +22,21 @@ export const closePopUp=(actionvalue=false)=>{
     }
 };
 export const reset=()=>({
-	type:RESET,
+    type:RESET,
         payload:{}
 });
 
 export const doglistingSuccess=(responseData,displaystatusbutton,loadcarousel,isfromSearched,category)=>{
-	return dispatch =>{
-		dispatch({
-		type:DOG_LISTING_SUCCESS_REDUCER,
-		responseData,
-		displaystatusbutton,
-		isfromSearched,
-		loadcarousel,
-		category
-	})
-	}
+    return dispatch =>{
+        dispatch({
+        type:DOG_LISTING_SUCCESS_REDUCER,
+        responseData,
+        displaystatusbutton,
+        isfromSearched,
+        loadcarousel,
+        category
+    })
+    }
 
 }
 
@@ -48,12 +47,12 @@ export const doglisting=(category,isfromSearched)=>{
     .then(responseData => {
       if (responseData.status=="success") {
             let displaystatusbutton=true;
-	       	let loadcarousel=false;
-		       	if(isfromSearched){
-		             displaystatusbutton=false;
-		   		     }else{
-		              loadcarousel=true;
-		       	     }
+               let loadcarousel=false;
+                   if(isfromSearched){
+                     displaystatusbutton=false;
+                        }else{
+                      loadcarousel=true;
+                        }
         dispatch(doglistingSuccess(responseData.message,displaystatusbutton,loadcarousel,isfromSearched,category));
       } else {
         const error = new Error(responseData.statusText);
@@ -61,7 +60,7 @@ export const doglisting=(category,isfromSearched)=>{
         throw error;
       }
     })
-    .catch(error => { console.log('request failed', error); });
+    .catch(error => { console.log("request failed", error); });
 }
 
 /*...................................*/
@@ -76,7 +75,7 @@ export function ReqSuccess(response) {
 }
 
 export function randomDogSuccess(response) {
-	return dispatch => {
+    return dispatch => {
     dispatch({ imageurlrandom:response, type: RANDOM_DOG_LISTING_SUCCESS });
   };
 }
@@ -95,11 +94,11 @@ export function MakeNetworkReq() {
         throw error;
       }
     })
-    .catch(error => { console.log('request failed', error); });
+    .catch(error => { console.log("request failed", error); });
 }
 
 export function dogRandomImg(url){
-	return dispatch =>
+    return dispatch =>
     fetch(url)
     .then(responseData=>responseData.json())
     .then(responseData => {
@@ -111,17 +110,17 @@ export function dogRandomImg(url){
         throw error;
       }
     })
-    .catch(error => { console.log('request failed', error); });
+    .catch(error => { console.log("request failed", error); });
 }
 
 export function listingOfBreed(dogArr){
-	return dispatch => {
+    return dispatch => {
     dispatch({ dogArr, type: LIST_OF_BREED });
   };
 }
 
 export function hidebreedlist(){
-	return dispatch => {
+    return dispatch => {
     dispatch({ display:false, type: HIDE_BREED_LIST });
   };
 }

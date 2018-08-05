@@ -6,7 +6,7 @@ SUCCESS,
 RANDOM_DOG_LISTING_SUCCESS,
 LIST_OF_BREED,
 HIDE_BREED_LIST,
-} from '../constants/const.js';
+} from "../constants/const.js";
 
 export function userAction(state="",action){	
 	let newstate={...state};

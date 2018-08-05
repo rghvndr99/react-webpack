@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import {doglisting,dogRandomImg} from '../action/action.js';
-import {bindActionCreators} from 'redux';
+import React, { Component } from "react";
+import {doglisting,dogRandomImg} from "../action/action.js";
+import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
-import {BASE_URL,LIST,ALL_BREAD,SPECIFIC_BREAD,IMAGES,RANDOM} from '../constants/const.js';
+import {BASE_URL,SPECIFIC_BREAD,IMAGES,RANDOM} from "../constants/const.js";
 
 class LayoutSection extends Component {
     constructor(props){
@@ -29,12 +29,10 @@ render() {
       const isfromSearched=properties.isfromSearched;
       let displaystatusbutton=true;
       const dogListing=this.props.doglisting;         
-      let dogs=properties.listofdog?properties.listofdog:[];
-      
+            
       if(isfromSearched){
             imgURL=this.props.imageurl;
             displaystatusbutton=false;
-            dogs=properties.imageurl?properties.imageurl:[];
             category=properties.activecategory;            
        }
  return ( 
@@ -57,7 +55,7 @@ render() {
   }
 }
 
-const mapstatetoprops=(state,props)=>{
+const mapstatetoprops=(state)=>{
   return state;
 };
 

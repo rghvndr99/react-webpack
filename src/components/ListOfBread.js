@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import {doglisting,hidebreedlist} from '../action/action.js';
-import {bindActionCreators} from 'redux';
+import React, { Component } from "react";
+import {doglisting,hidebreedlist} from "../action/action.js";
+import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 
 class ListOfBread extends Component {
@@ -11,26 +11,26 @@ class ListOfBread extends Component {
   }
   loadBread=(bread)=>{
      this.props.doglisting(bread,true);
-     this.props.hidebreedlist();	
+     this.props.hidebreedlist();    
   }
   render(){
-  	const breadList =this.props.userAction.filteredBread;
-  	const isdisplaylist=this.props.userAction.isdisplaylist===false?false:true;
-  	const breadlistUI=breadList.map((bread)=>{
-  		return <li key={bread} onClick={()=>this.loadBread(bread)} className="breadlist">{bread}</li>;
-  	})
-  	return (
-  	     <div>
-  	     {isdisplaylist && 
-  	     	<ul className="breadliscontainer">{breadlistUI}</ul>}
-  	     </div>
-  	);
-  		
+      const breadList =this.props.userAction.filteredBread;
+      const isdisplaylist=this.props.userAction.isdisplaylist===false?false:true;
+      const breadlistUI=breadList.map((bread)=>{
+          return <li key={bread} onClick={()=>this.loadBread(bread)} className="breadlist">{bread}</li>;
+      })
+      return (
+           <div>
+           {isdisplaylist && 
+               <ul className="breadliscontainer">{breadlistUI}</ul>}
+           </div>
+      );
+          
   }
 }
 
 
-const mapstatetoprops=(state,props)=>{
+const mapstatetoprops=(state)=>{
   return state;
 };
 

@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import HeaderComponent from './HeaderComponent';
-import GalleryLayout from './GalleryLayout';
-import {closePopUp,MakeNetworkReq,reset,doglisting} from '../action/action.js';
-import {bindActionCreators} from 'redux';
+import React, { Component } from "react";
+import HeaderComponent from "./HeaderComponent";
+import GalleryLayout from "./GalleryLayout";
+import {closePopUp,MakeNetworkReq,reset,doglisting} from "../action/action.js";
+import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
- 
+
 class Main extends Component {
     constructor(props){
         super(props);
         this.dogListing=this.dogListing.bind(this);
     }
  componentDidMount(){
-  this.props.MakeNetworkReq();       
+  this.props.MakeNetworkReq();
  }
 
  dogListing=(category,isfromSearched)=>{
@@ -19,17 +19,17 @@ class Main extends Component {
   }
 
   render() {
-       return ( 
-        <div>        
+       return (
+        <div>
           <HeaderComponent/>
 
           <GalleryLayout />
         </div>
-    );  
+    );
 }
 }
 
-const mapstatetoprops=(state,props)=>{
+const mapstatetoprops=(state)=>{
   return state;
 };
 

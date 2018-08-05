@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import LayoutSection from './LayoutSection';
-import LoadCarousol from './loadCarosoul';
-import {doglisting} from '../action/action.js';
-import {bindActionCreators} from 'redux';
+import React, { Component } from "react";
+import LayoutSection from "./LayoutSection";
+import LoadCarousol from "./loadCarosoul";
+import {doglisting} from "../action/action.js";
+import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 
 class GalleryLayout extends Component {
@@ -35,7 +35,7 @@ class GalleryLayout extends Component {
   }
 }
 
-const mapstatetoprops=(state,props)=>{
+const mapstatetoprops=(state)=>{
   return state;
 };
 

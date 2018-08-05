@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import ListOfBread from './ListOfBread';
-import {reset,doglisting,dogRandomImg,listingOfBreed} from '../action/action.js';
-import {bindActionCreators} from 'redux';
+import React, { Component } from "react";
+import ListOfBread from "./ListOfBread";
+import {reset,doglisting,dogRandomImg,listingOfBreed} from "../action/action.js";
+import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 
 
@@ -30,7 +30,7 @@ class HeaderComponent extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <button className="btnhome" onClick={this.reset}></button>
+          <button className="btnhome" onClick={this.reset} />
           <span className="App-title">Welcome to React</span>
           <input type="text" ref={this.txtref} placeholder="search by bread" className="search-bread" onKeyUp={this.listBread}/>
                     {breadList.length>0 &&
@@ -43,7 +43,7 @@ class HeaderComponent extends Component {
 }
 
 
-const mapstatetoprops=(state,props)=>{
+const mapstatetoprops=(state)=>{
   return state;
 };
 

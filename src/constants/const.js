@@ -1,9 +1,9 @@
-export const BASE_URL='https://dog.ceo/api/';
-export const LIST='list';
-export const ALL_BREAD='breeds/';
-export const SPECIFIC_BREAD='breed/';
-export const IMAGES='/images';
-export const RANDOM='/random';
+export const BASE_URL="https://dog.ceo/api/";
+export const LIST="list";
+export const ALL_BREAD="breeds/";
+export const SPECIFIC_BREAD="breed/";
+export const IMAGES="/images";
+export const RANDOM="/random";
 
 
 export const CLOSE_CAROSOUL="closecarosoul";

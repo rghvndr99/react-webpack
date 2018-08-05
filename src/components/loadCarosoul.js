@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Carousel } from 'react-responsive-carousel';
-import '../../node_modules/react-responsive-carousel/lib/styles/carousel.min.css';
-import {closePopUp} from '../action/action.js';
-import {bindActionCreators} from 'redux';
+import React, { Component } from "react";
+import { Carousel } from "react-responsive-carousel";
+import "../../node_modules/react-responsive-carousel/lib/styles/carousel.min.css";
+import {closePopUp} from "../action/action.js";
+import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 
 
@@ -15,9 +15,8 @@ render() {
  return ( 
           <div className="overlay">
           <div className="carousal-wrapper">
-            <div className="close-btn" onClick={()=>this.props.closePopUp()}>
-            </div>
-              <Carousel showArrows={true} selectedItem ={0} infiniteLoop={true} autoPlay={false} showThumbs={false} showIndicators={false}>
+            <div className="close-btn" onClick={()=>this.props.closePopUp()} />
+              <Carousel showArrows selectedItem ={0} infiniteLoop autoPlay={false} showThumbs={false} showIndicators={false}>
               {imgdatacategory.map((imgdata,index)=><div key={index+10000}><img alt="" key={index} className="carosoul-img-dimension" src={imgdata}/> </div>)}
              </Carousel>
             
@@ -27,7 +26,7 @@ render() {
   }
 }
 
-const mapstatetoprops=(state,props)=>{
+const mapstatetoprops=(state)=>{
   return state;
 };
 
