@@ -14,15 +14,13 @@ IMAGES
 } from "../constants/const.js";
 /*...............user action....................*/
 export const closePopUp=(actionvalue=false)=>{
-        return dispatch=>{
-        dispatch({
+        return {
           type:CLOSE_CAROSOUL,
-          actionvalue
-        })        
+          actionvalue:actionvalue
     }
 };
 export const reset=()=>({
-    type:RESET,
+       type:RESET,
         payload:{}
 });
 
@@ -69,14 +67,16 @@ export const doglisting=(category,isfromSearched)=>{
 /*...............page load action....................*/
 
 export function ReqSuccess(response) {
-  return dispatch => {
-    dispatch({ response, type: SUCCESS });
+  return {
+     response,
+     type: SUCCESS
   };
 }
 
 export function randomDogSuccess(response) {
-    return dispatch => {
-    dispatch({ imageurlrandom:response, type: RANDOM_DOG_LISTING_SUCCESS });
+    return {
+    imageurlrandom:response,
+    type: RANDOM_DOG_LISTING_SUCCESS
   };
 }
 
@@ -114,14 +114,16 @@ export function dogRandomImg(url){
 }
 
 export function listingOfBreed(dogArr){
-    return dispatch => {
-    dispatch({ dogArr, type: LIST_OF_BREED });
+    return {
+         dogArr,
+        type: LIST_OF_BREED
   };
 }
 
 export function hidebreedlist(){
-    return dispatch => {
-    dispatch({ display:false, type: HIDE_BREED_LIST });
-  };
+    return {
+       display:false,
+      type: HIDE_BREED_LIST
+    };
 }
 /*...................................*/

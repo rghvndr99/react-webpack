@@ -7,19 +7,19 @@ import {connect} from "react-redux";
 
 
 class CarouselSection extends Component {
- 
+
 render() {
       let properties=this.props.userAction;
-      const imgdatacategory=properties.imageurl;    
-      
- return ( 
+      const imgdatacategory=properties.imageurl;
+
+ return (
           <div className="overlay">
           <div className="carousal-wrapper">
             <div className="close-btn" onClick={()=>this.props.closePopUp()} />
               <Carousel showArrows selectedItem ={0} infiniteLoop autoPlay={false} showThumbs={false} showIndicators={false}>
               {imgdatacategory.map((imgdata,index)=><div key={index+10000}><img alt="" key={index} className="carosoul-img-dimension" src={imgdata}/> </div>)}
              </Carousel>
-            
+
         </div>
         </div>
     );

@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import LayoutSection from "./LayoutSection";
 import LoadCarousol from "./loadCarosoul";
+//import ErrorBoundary from "./ErrorHandling.js";
 import {doglisting} from "../action/action.js";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 
-class GalleryLayout extends Component {
+export class GalleryLayout extends Component {
     constructor(props){
         super(props);
           }
@@ -18,19 +19,21 @@ class GalleryLayout extends Component {
          listOfDogs=properties.imageurl?properties.imageurl:[];
       }
       const imgSection=listOfDogs.map(item=>{
-          return <LayoutSection 
-                  key={item} 
+          return <LayoutSection
+                  key={item}
                   category={item}
                   imageurl={item}
                 />
       })
-    return ( 
+    return (
+     
         <div>
         {imgSection}
         {loadcarousel &&
            <LoadCarousol />
         }
         </div>
+        
     );
   }
 }
