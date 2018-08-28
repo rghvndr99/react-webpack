@@ -17,10 +17,10 @@
 ## How to Start
 * Clone this repository
 * Run command **npm install**. This will install all the dependency.
-   1. Start Application 
+   1. Start Application  
       Run command **npm run start**. This will open http://localhost:8080/ in web browser. 
 
-   1.  Start Linter 
+   1.  Start Linter   
       Linter is integrated with webpack. hence every time, on any edit, it will run and through an error if same exists. 
       ![linter](https://github.com/rghvndr99/react-webpack/blob/master/src/screen/linterrors.PNG)
 
@@ -32,7 +32,7 @@
 * As soon as page is loaded,all the breads of dogs are getting listed on the page with one random image of this breed.
 ![Home page](https://github.com/rghvndr99/react-webpack/blob/master/src/screen/home%20page.PNG) 
 
-* Now you can see all the dogs of particular breed by clicking on** View More** button . this will open all the dogs in a carousal.
+* Now you can see all the dogs of particular breed by clicking on **View More** button . this will open all the dogs in a carousal.
 
 ![carousal](https://github.com/rghvndr99/react-webpack/blob/master/src/screen/carousal.PNG)  
 
