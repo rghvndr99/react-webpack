@@ -17,7 +17,7 @@ module.exports={
         filename: "bundle.js"
     },
 	devServer: {
-		port: 5000
+		port: 5055
 	},
     module:{
         rules:[
