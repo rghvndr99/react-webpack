@@ -16,6 +16,9 @@ module.exports={
         path: path.resolve("dist"),
         filename: "bundle.js"
     },
+	devServer: {
+		port: 5000
+	},
     module:{
         rules:[
             {
