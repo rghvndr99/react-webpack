@@ -8,13 +8,13 @@ import {Provider} from "react-redux";
 import {userAction} from "./reducer/reducer.js";
 
 
-const enhancer=compose(applyMiddleware(thunk),window.devToolsExtension && window.devToolsExtension());
+const enhancer=compose(applyMiddleware(thunk));
 
 const allReducers=combineReducers({
             userAction
 });
 const store=createStore(
-allReducers,{},enhancer
+    allReducers,{},enhancer
 );
 
 ReactDOM.render(<Provider store={store}><Main/></Provider>, document.getElementById("root"));

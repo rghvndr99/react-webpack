@@ -1,6 +1,8 @@
 const path = require("path");
+const devMode = process.env.NODE_ENV !== 'production'
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
 const htmlplugin=new HtmlWebPackPlugin({
@@ -10,15 +12,23 @@ const htmlplugin=new HtmlWebPackPlugin({
 
 const cleanHtml=new CleanWebpackPlugin(["dist"]);
 
+const miniCssExtractPlugin = new MiniCssExtractPlugin({
+  // Options similar to the same options in webpackOptions.output
+  // both options are optional
+  filename: "styles/[name].css",
+  chunkFilename: "[id].css"
+})
+
 module.exports={
     entry: "./src/index.js",
     output: {
-        path: path.resolve("dist"),
-        filename: "bundle.js"
+        path: path.resolve("public"),
+        filename: "js/bundle.js"
     },
 	devServer: {
 		port: 5055
-	},
+  },
+  devtool: "source-map",
     module:{
         rules:[
             {
@@ -49,24 +59,26 @@ module.exports={
             },
 
          {
-          test:/\.scss$/,
-          use:["style-loader","css-loader","sass-loader"]
-         },
-
-         {
-          test:/\.css$/,
-          use:["style-loader","css-loader"]
+            test: /\.(sa|sc|c)ss$/,
+            use: [
+              MiniCssExtractPlugin.loader,
+              'css-loader',
+              'sass-loader',
+            ],
          },
 
          {
              test: /\.(gif|png|svg|jpe?g)$/,
              use:[
-                 "file-loader",
                  {
-                    loader:"image-webpack-loader",
+                    loader:"file-loader",
                      options:{
                          bypassOnDebug:true,
-                         disable:true
+                         disable:true,
+                         outputPath: 'images/',
+                         name(file) {
+                          return '[name].[ext]';
+                        }
                       }
                  }
               ]
@@ -74,5 +86,5 @@ module.exports={
 
         ]
     },
-    plugins:[htmlplugin,cleanHtml]
+    plugins:[htmlplugin,cleanHtml, miniCssExtractPlugin]
 }

@@ -27,7 +27,7 @@ export class GalleryLayout extends Component {
       })
     return (
      
-        <div>
+        <div className="content">
         {imgSection}
         {loadcarousel &&
            <LoadCarousol />
