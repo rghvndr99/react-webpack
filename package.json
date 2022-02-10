@@ -41,7 +41,7 @@
     "lodash": "^4.17.15",
     "mini-css-extract-plugin": "^0.5.0",
     "mocha": "^5.2.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.13.1",
     "redux-mock-store": "^1.5.4",
